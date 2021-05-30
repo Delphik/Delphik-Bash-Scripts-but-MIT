@@ -1,2 +1,2 @@
-# Delphik-Bash-Scripys-but-MIT
+# Delphik-Scripts-but-MIT
 My bash scripts relicensed under MIT
