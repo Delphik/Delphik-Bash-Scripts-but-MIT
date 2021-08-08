@@ -1,5 +1,5 @@
 # Delphik-Scripts-but-MIT
-My bash scripts relicensed under MIT
+My bash scripts under MIT license
 
 # Live
 * Mjup.sh - Manjaro Updater
