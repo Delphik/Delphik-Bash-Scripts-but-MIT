@@ -15,25 +15,17 @@ set -e
 # -h        Help
 
 flatpak_update () {
-
     echo "Updating Flatpak" | cowsay | lolcat
     sudo flatpak update -y | lolcat
 
 }
 
 pacman_update () {
-    
     echo "Updating Repos with pacman" | cowsay | lolcat
-    sudo pacman -Syu |lolcat
+    sudo pacman -Syu | lolcat
 }
 
-if [ "$1" == "-y" ]; then
-    echo "Updating Repos and AUR with yay" | cowsay | lolcat
-    yay -Syu -y
-    flatpak_update
-
-
-elif [ "$1" == "-h" ]; then
+help () {
     echo "Mjup Help" | cowsay | lolcat
     echo
     echo "Updates with Pacman by default and then flatpak" | lolcat
@@ -41,8 +33,20 @@ elif [ "$1" == "-h" ]; then
     echo " -p        Updates via pamac"  | lolcat
     echo " -pa       Updates via pamac with AUR flag" | lolcat
     echo " -k        Refreshes pacman keyring then updates via flatpak" | lolcat
-    echo " -h        Help" | lolcat
+    echo " -h, -help Help " | lolcat
     exit
+}
+
+if [ "$1" == "-y" ]; then
+    echo "Updating Repos and AUR with yay" | cowsay | lolcat
+    yay -Syu -y
+    flatpak_update
+
+elif [ "$1" == "-h" ]; then
+    help
+
+elif [ "$1" == "-help" ]; then
+    help
 
 elif [ "$1" == "-p" ]; then
     echo "Updating Repos with Pamac" | cowsay | lolcat
