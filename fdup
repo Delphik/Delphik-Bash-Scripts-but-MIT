@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# author Max Henny
+# Update tool for fedora
+
+sudo dnf update -y
+sudo dnf autoremove -y
+sudo flatpak upgrade -y
+
+exit
+
+
