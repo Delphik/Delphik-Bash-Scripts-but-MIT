@@ -13,7 +13,9 @@ if[ "$1" == "-c" ]; then
 # Option for Help Menu
 elif [ "$1" == "-h" ]; then
     help
-
+else
+cli_install
+gui_install
 fi
 
 # Install CLI Apps
